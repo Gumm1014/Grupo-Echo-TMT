@@ -1,0 +1,35 @@
+.header{
+    background-color: #0D0D0D;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+.lista{
+    display: flex;
+    font-size: 13px;
+    font-family: "DM Sans", sans-serif;
+    gap: 60px;
+}
+.lista p{
+    display: flex;
+    font-size: 13px;
+    font-weight: 600;
+    gap: 60px;
+    cursor: pointer;
+}
+
+.img_carrito{
+    margin-right: 30px;
+
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+.img_logotmt{
+    margin-top: 8px;
+    margin-left: 13px;
+    width: 85px;
+    cursor: pointer;
+}
