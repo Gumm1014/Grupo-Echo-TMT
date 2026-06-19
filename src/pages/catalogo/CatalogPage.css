@@ -1,0 +1,28 @@
+.catalog-page {
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+.catalog-page__body {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 0 40px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px 60px;
+}
+
+.catalog-page__content {
+  padding-top: 36px;
+}
+
+@media (max-width: 900px) {
+  .catalog-page__body {
+    grid-template-columns: 1fr;
+    padding: 0 20px 40px;
+  }
+
+  .catalog-page__content {
+    padding-top: 20px;
+  }
+}
