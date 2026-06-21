@@ -1,0 +1,70 @@
+
+.tarjeta-producto{
+    border: #FFF solid 2px;
+    background-color: #FFFF;
+    box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.30);
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    cursor: pointer;
+   
+}
+
+.header_tarjeta img{
+    width: 100%;
+}
+
+
+.conten_tarjeta{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: auto;
+    width: 80%;
+
+}
+
+.categ_tarjeta{
+    color: #C4956A;
+    font-family: "DM Sans", sans-serif ; 
+    letter-spacing: 1px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-top: 10px;
+    line-height: 1.4;
+}
+.titulo_tarjeta{
+    color: #0D0D0D;
+    font-family: "Playfair", serif;
+    font-size: 19px;
+    font-weight: 900;
+}
+.info_tarjeta{
+    color: #888888;
+    font-size: 11px;
+    font-family: "DM Sans", sans-serif ; 
+    font-weight: 600;
+    line-height: 1.2;
+
+}
+.linea_tarjeta{
+    margin-top: 12px;
+    margin-bottom: 10px;
+    background-color: #888888;
+    height: 1px;
+}
+
+.ver_detalles{
+    display: flex;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: "DM Sans", sans-serif ;
+    justify-content: space-between; 
+}
+.ver_detalles .flechita_vd{
+    color: #8B5E3C;
+    margin-right: 3px;
+}
+.fl_vd{
+    display: flex;
+    align-items: center;
+}
