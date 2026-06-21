@@ -5,7 +5,7 @@ function ProductCard() {
   return (
     <article className="product-card">
       <div className="product-card__image-wrap">
-        <img src="/sofaImg.png" alt="Sofá" />
+        <img src="/prod 4.png" alt="Sofá" />
       </div>
 
       <div className="product-card__body">

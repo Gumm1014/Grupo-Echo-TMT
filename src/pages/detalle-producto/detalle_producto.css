@@ -1,0 +1,180 @@
+.seccion_det_p{
+    background-color: #F5F0E8;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    justify-content: center;
+    max-width: 100%;
+
+}
+.primer_seccion_dp{
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+}
+.seccion_det_p h2{
+    font-family: "Inria Serif", serif;
+    font-style: italic;
+    margin-top: 12px;
+    margin-bottom: 10px;
+
+}
+.des_p{
+    font-family: "Inria Serif", serif;
+    font-style: italic;
+} 
+
+.seccion_det_p h6{
+    color: #8B5E3C;
+    letter-spacing: 2px;
+    margin-bottom: 0px;
+    font-family: "DM Sans", sans-serif ;
+}
+
+.info_dp{
+    margin-top: 40px;
+    color: #0D0D0D;
+    text-align: left;
+}
+
+.tarjeta_espc_dp{
+    background-color: #FFFFFF;
+    width: 100%;
+    margin-top: 12px; 
+    border-radius: 3px;
+    font-family: "Inria Serif", serif;
+    font-style: italic;
+    box-shadow:
+        0px 1px 3px 1px rgba(0, 0, 0, 0.15),
+        0px 1px 2px 0px rgba(0, 0, 0, 0.30);
+}
+.tarjeta_espc_dp h3{
+    margin-top: 0;
+    letter-spacing: 2px;
+    font-family: "DM Sans", sans-serif;
+    font-style: italic;
+    margin-bottom: 10px;
+
+}
+.tarjeta_espc{
+    padding: 20px;
+}
+.t_espc_dp{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.t_espc_dp p{
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 6px;
+    margin-bottom: 1px;
+}
+
+.imgs_dp{
+    display: flex;
+    margin-top: 80px;
+}
+.imagen_principal_dp{
+    width: 360px;
+    margin-right: 50px;
+}
+.imgs_dp img{
+    cursor: pointer;
+    
+}
+.otros_img_dp{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-right: 30px;
+    
+}
+.otros_img_dp img{
+    width: 100px;
+}
+.tarjeta_espc_dp .linea_dp {
+    margin: auto;
+    height: 1px;
+    background-color: #C8C5BD;
+    width: 100%;
+    margin-top: 1px;
+}
+.espc_prod {
+    font-size: 13px !important;
+}
+
+.btn_añadir_carrito{
+    cursor: pointer;
+    display: flex;
+    margin: auto;
+    margin-top: 20px;
+    background-color: #151515;
+    border: none;
+    width: 30%;
+    border-radius: 7px;
+    padding: 8px;
+    align-items: center;
+
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: "DM Sans", sans-serif;
+    letter-spacing: 1px;
+}
+.btn_añadir_carrito img{
+    width: 23px;
+    margin-left: 10px;
+    margin-right: 12px;
+  
+}
+
+
+
+.sep_dp{
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    gap: 20px;
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+
+}
+.sep_dp .linea_dp {
+    height: 2px;
+    background-color: #000000;
+    width: 100%;
+
+}
+.circulo_dp{
+    margin-bottom: 8px;
+    background-color: #F5F0E8;
+    color: #000000;
+    font-size: 30px;
+}
+.seccion_de_sugerencias{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 25px;
+    
+}
+.titulo_s_s{
+    color: #0D0D0D;
+    text-align: left;
+    font-family: "Playfair Display SC", serif;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+.tarjetas_s_s{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 60px;
+}

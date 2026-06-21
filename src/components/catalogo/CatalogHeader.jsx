@@ -1,12 +1,8 @@
-import sofaImg from '../public/sofa.jpg';
-import "./CatalogHeader.css";
-
+import "./CatalogHeader.css"; // Sacamos el import de la imagen
 
 function CatalogHeader() {
   return (
     <header className="catalog-header">
-      
-
       <div className="catalog-header__content">
         <div className="catalog-header__text">
           <div className="catalog-header__eyebrow">
@@ -20,7 +16,8 @@ function CatalogHeader() {
         </div>
 
         <div className="catalog-header__image-wrap">
-          <img src="/sofaImg.png" alt="Sofá" />
+          {/* Al empezar con "/", Vite sabe que busca directamente en public */}
+          <img className="catalog-header__image" src="/prod 4.png" alt="Producto" />
         </div>
       </div>
     </header>

@@ -3,6 +3,7 @@
   background: #0d0d0d;
   overflow: hidden;
   border-bottom: 3px solid var(--color-accent);
+  height: 330px;
 }
 
 .catalog-header__nav {
@@ -30,15 +31,15 @@
   position: relative;
   display: flex;
   align-items: stretch;
-  min-height: 320px;
+  min-height: 200px;
 }
 
 .catalog-header__text {
-  flex: 1 1 50%;
+  flex: 1 1 22%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 40px 60px 56px;
+  padding: 20px 0px 150px 80px;
   z-index: 2;
 }
 
@@ -64,10 +65,10 @@
 .catalog-header__title {
   font-family: "Playfair Display", Georgia, "Times New Roman", serif;
   color: #f7f3ee;
-  font-size: 52px;
+  font-size: 36px;
   line-height: 1.1;
   font-weight: 700;
-  margin: 0 0 18px;
+  margin: 0 0 14px;
 }
 
 .catalog-header__subtitle {
@@ -77,14 +78,14 @@
 }
 
 .catalog-header__image-wrap {
-  flex: 1 1 50%;
+  flex: 1 1 10%;
   position: relative;
   overflow: hidden;
 }
 
 .catalog-header__image {
   width: 100%;
-  height: 100%;
+  height: 75%;
   object-fit: cover;
   object-position: center 30%;
   display: block;
@@ -97,6 +98,8 @@
   mask-image: linear-gradient(to right, transparent 0%, black 18%);
 }
 
+
+
 @media (max-width: 900px) {
   .catalog-header__content {
     flex-direction: column;
@@ -104,15 +107,15 @@
   }
 
   .catalog-header__title {
-    font-size: 36px;
+    font-size: 28px;
   }
 
   .catalog-header__text {
-    padding: 32px 24px;
+    padding: 24px 24px;
   }
 
   .catalog-header__image-wrap {
-    height: 220px;
+    height: 160px;
   }
 
   .catalog-header__image {
