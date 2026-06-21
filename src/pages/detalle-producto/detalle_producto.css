@@ -30,9 +30,11 @@
     color: #8B5E3C;
     letter-spacing: 2px;
     margin-bottom: 0px;
+    font-family: "DM Sans", sans-serif ;
 }
 
 .info_dp{
+    margin-top: 40px;
     color: #0D0D0D;
     text-align: left;
 }
@@ -53,6 +55,7 @@
     letter-spacing: 2px;
     font-family: "DM Sans", sans-serif;
     font-style: italic;
+    margin-bottom: 10px;
 
 }
 .tarjeta_espc{
@@ -66,7 +69,8 @@
 .t_espc_dp p{
     font-size: 16px;
     font-weight: bold;
-
+    margin-top: 6px;
+    margin-bottom: 1px;
 }
 
 .imgs_dp{
@@ -95,7 +99,7 @@
     margin: auto;
     height: 1px;
     background-color: #C8C5BD;
-    width: 97%;
+    width: 100%;
     margin-top: 1px;
 }
 .espc_prod {
@@ -158,6 +162,7 @@
     width: 90%;
     justify-content: center;
     margin: auto;
+    margin-bottom: 25px;
     
 }
 .titulo_s_s{
@@ -165,7 +170,7 @@
     text-align: left;
     font-family: "Playfair Display SC", serif;
     letter-spacing: 1px;
-    
+    margin-bottom: 20px;
 }
 .tarjetas_s_s{
     display: flex;
