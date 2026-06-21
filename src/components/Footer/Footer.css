@@ -1,0 +1,77 @@
+.footer { 
+    background: #1a1a1a; 
+    color: #ccc; 
+    padding: 48px 48px 28px; 
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 40px; 
+}
+
+.footer-brand-name { 
+    font-size: 22px; 
+    font-weight: 700; 
+    color: #fff; 
+    letter-spacing: 0.15em; 
+    font-variant: small-caps; 
+    margin-bottom: 10px; 
+}
+
+.footer-brand-desc { 
+    font-family: Arial,sans-serif; 
+    font-size: 12px; color: #999; line-height: 1.6; 
+  
+    margin-bottom: 12px; 
+}
+
+.footer-divider { 
+    width: 30px; 
+    height: 2px; 
+    background: #c9a96e; 
+}
+
+.footer-col-title { 
+    font-family: Arial,sans-serif; 
+    font-size: 10px; 
+    font-weight: 700; 
+    letter-spacing: 0.12em; 
+    color: #fff; 
+    text-transform: uppercase; 
+    margin-bottom: 16px; 
+}
+
+.footer-links { 
+    list-style: none; 
+    display: flex; 
+    flex-direction: column;
+    gap: 8px; 
+}
+
+.footer-links li { 
+    font-family: Arial,sans-serif; 
+    font-size: 13px; color: #999; 
+    cursor: pointer; 
+}
+
+.footer-links li:hover { 
+    color: #c9a96e; 
+}
+
+.footer-contact-item { 
+    font-family: Arial,sans-serif; 
+    font-size: 13px; color: #999; 
+    margin-bottom: 6px; 
+}
+
+.footer-bottom { 
+    background: #444444; 
+    padding: 16px 48px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.footer-bottom-text { 
+    font-family: Arial,sans-serif; 
+    font-size: 11px; 
+    color: #fff; 
+}
