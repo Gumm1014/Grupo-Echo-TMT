@@ -1,12 +1,21 @@
 import ProductCard from "./ProductCard.jsx";
 import "./ProductGrid.css";
 
-function ProductGrid({ products }) {
+function ProductGrid() {
   return (
     <div className="product-grid">
-      {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
     </div>
   );
 }

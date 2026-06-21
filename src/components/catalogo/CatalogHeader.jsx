@@ -1,13 +1,11 @@
+import sofaImg from '../public/sofa.jpg';
 import "./CatalogHeader.css";
-import sofaImg from "../../assets/sofaImg.png";
+
 
 function CatalogHeader() {
   return (
     <header className="catalog-header">
-      <nav className="catalog-header__nav">
-        <span className="catalog-header__nav-item">Inicio</span>
-        <span className="catalog-header__nav-item">Preguntas frecuentes</span>
-      </nav>
+      
 
       <div className="catalog-header__content">
         <div className="catalog-header__text">
@@ -22,11 +20,7 @@ function CatalogHeader() {
         </div>
 
         <div className="catalog-header__image-wrap">
-          <img
-            src={sofaImg}
-            alt="Sofá de la colección 2025"
-            className="catalog-header__image"
-          />
+          <img src="/sofaImg.png" alt="Sofá" />
         </div>
       </div>
     </header>
