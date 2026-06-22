@@ -12,7 +12,7 @@ function Tarjeta_producto(){
                 <p className="info_tarjeta">Estructura robusta en madera maciza. Cabecera tallada. Disponible.</p>
                 <div className="linea_tarjeta"></div>
                 <div className="ver_detalles">
-                    <p>Roble / Pino</p>
+                    <p className="mater_tarjeta">Roble / Pino</p>
                     <div className="fl_vd">
                         <p className="flechita_vd">Ver detalle</p>
                         <img src="./flechita.png" alt="" />
