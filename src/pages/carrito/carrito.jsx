@@ -1,11 +1,6 @@
-import "./carrito.css"
+import "./carrito.css";
+import { CarritoVacio } from "../../components/carrito/CarritoVacio";
 
-function Carrito() {
-  return (
-    <div>
-        <h1>carrito :v</h1>
-    </div>
-  )
+export function Carrito() {
+  return <CarritoVacio />;
 }
-
-export default Carrito
