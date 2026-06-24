@@ -6,7 +6,7 @@ import Footer from './components/Footer/Footer.jsx';
 import Home from "./pages/home/home.jsx"
 import Detalle_p from "./pages/detalle-producto/detalle_producto.jsx"
 import CatalogPage from "./pages/catalogo/CatalogPage.jsx"
-import { Carrito } from './pages/carrito/carrito.jsx';
+import Carrito from './pages/carrito/carrito.jsx';
 
 function App() {
   return (

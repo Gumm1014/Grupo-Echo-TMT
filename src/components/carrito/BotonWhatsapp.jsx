@@ -4,7 +4,7 @@ export function BotonWhatsapp() {
   return (
     <button className="boton-whatsapp" type="button">
       <IconoWhatsapp />
-      <span>SOLICITAR PRESUPUESTO<br />POR WHATSAPP</span>
+      <span>SOLICITAR PRESUPUESTO POR WHATSAPP</span>
     </button>
   );
 }
