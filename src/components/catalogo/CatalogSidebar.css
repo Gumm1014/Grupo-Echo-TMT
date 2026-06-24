@@ -1,0 +1,62 @@
+.catalog-sidebar {
+  height: 100%;
+  border-right: 1px solid #C4956A;
+  padding: 36px 0px 0px 0;
+}
+
+.catalog-sidebar__title {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 18px;
+  padding: 0 15px;
+}
+
+.catalog-sidebar__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.catalog-sidebar__item {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  color: var(--color-text);
+  padding: 14px 8px 10px 15px;
+  border-top: 0.5px solid #C4956A;
+  cursor: pointer;
+  transition: color 0.2s ease, padding-right 0.2s ease;
+}
+
+.catalog-sidebar__list li:last-child {
+  border-bottom: 1px solid #C4956A;
+}
+
+.catalog-sidebar__item:hover {
+  color: var(--color-accent);
+  padding-right: 6px;
+}
+
+@media (max-width: 900px) {
+  .catalog-sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+    padding: 24px 0;
+  }
+
+  .catalog-sidebar__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 18px;
+  }
+
+  .catalog-sidebar__item {
+    border-top: none !important;
+    padding: 8px 0;
+  }
+
+  .catalog-sidebar__list li:last-child {
+    border-bottom: none;
+  }
+}
