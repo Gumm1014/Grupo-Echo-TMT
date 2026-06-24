@@ -1,5 +1,4 @@
-import "./preguntasfrecuentes.css"
-
+import "./preguntasfrecuentes.css";
 
 export default function Preguntasf() {
     const preguntas = [
@@ -16,8 +15,8 @@ export default function Preguntasf() {
     ];
 
     return (
-        <section className="pf">
-            <div className="pf-header">
+        <section className="pfreq-section">
+            <div className="pfreq-header">
                 <h2>
                     Preguntas <span>frecuentes</span>
                 </h2>
@@ -27,19 +26,21 @@ export default function Preguntasf() {
                 </p>
             </div>
 
-            <div className="pf-content">
-                <div className="titulito">
+            <div className="pfreq-content">
+                <div className="pfreq-title">
                     <h3>
                         Lo que más <br />
                         nos consultan
                     </h3>
                 </div>
 
-                <div className="lista">
+                <div className="pfreq-list">
                     {preguntas.map((pregunta, index) => (
-                        <div className="pfitem" key={index}>
+                        <div className="pfreq-item" key={index}>
                             <span>{pregunta}</span>
-                            <button>+</button>
+                            <button aria-label="Ver respuesta">
+                                <span className="pfreq-icon" />
+                            </button>
                         </div>
                     ))}
                 </div>
