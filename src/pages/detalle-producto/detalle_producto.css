@@ -1,7 +1,8 @@
 .seccion_det_p{
     background-color: #F5F0E8;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    /* flex-direction: column; */
     padding-top: 10px;
     justify-content: center;
     max-width: 100%;
@@ -184,4 +185,46 @@
     flex-direction: row;
     justify-content: space-between;
     gap: 60px;
+}
+
+@media (max-width: 790px) {
+    .primer_seccion_dp{
+        display: grid;
+        gap: 60px;
+        justify-content: center;
+        width: 100%;
+        margin: auto;
+    }
+    
+
+    .imgs_dp{
+        display: flex;
+        flex-direction: column-reverse;
+     
+    }
+    .otros_img_dp{
+        display: flex;
+        flex-direction: row;
+    }
+    .imagen_principal_dp{
+        width: 90vw;
+        height: auto;
+        margin-right: 0;
+        max-width: none;
+    }
+    .otros_img_dp{
+        
+        margin-left: 5px;
+        display: flex;
+        gap: 30px;
+        
+    }
+    .otros_img_dp img{
+        width: 25vw;
+        max-width: none;
+    }
+
+    .tarjetas_s_s{
+        display: grid;
+    }
 }
