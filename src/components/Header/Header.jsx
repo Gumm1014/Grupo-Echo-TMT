@@ -1,5 +1,5 @@
 import "./Header.css"
-
+import { Link } from "wouter"
 function Header() {
     return (
         <>
@@ -9,12 +9,15 @@ function Header() {
                 <img className="img_logotmt" src="./logo_tmt.png" alt="Logo TMT" />
 
                 <nav className="lista">
-                    <p>INICIO</p>
-                    <p>CATÁLOGO</p>
-                    <p>PREGUNTAS FRECUENTES</p>
+                    
+                    <Link className="link_nav" href="/home"><p>INICIO</p></Link>
+                    <Link className="link_nav" href="/catalogo"><p>CATÁLOGO</p></Link>
+                    <Link className="link_nav" href="/preguntasfrecuentes"><p>PREGUNTAS FRECUENTES</p></Link>
+                    
+                    
                 </nav>
 
-                <img className="img_carrito desktop-only" src="./carrito_icono.png" alt="Carrito" />
+                <Link href="/carrito"><img className="img_carrito desktop-only" src="./carrito_icono.png" alt="Carrito" /></Link>
 
                 <label className="hamburger-toggle" htmlFor="menu-toggle" aria-label="Abrir menú">
                     <img className="hambur-header.png" src="./hambur-header.png" alt="Menú" />
