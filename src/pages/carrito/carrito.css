@@ -1,3 +1,342 @@
+<<<<<<< Updated upstream
 h1{
     color: darkslateblue;
 }
+=======
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400;500&display=swap');
+
+:root {
+  --bg: #F5F1EC;
+  --bg-claro: #FAF7F3;
+  --oscuro: #111111;
+  --texto: #1a1a1a;
+  --gris: #6b6157;
+  --gris-claro: #7a7068;
+  --borde: #C8BFB3;
+  --borde-suave: #DDD6CC;
+  --acento: #B8906A;
+  --marron: #8B6347;
+  --marron-claro: #C4A882;
+  --ws: #25D366;
+  --serif: 'Playfair Display', serif;
+  --sans: 'Inter', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--texto);
+}
+
+.pagina {
+  display: flex;
+  min-height: 100vh;
+}
+
+.contenido {
+  flex: 1;
+  padding: 48px 56px 80px;
+  background: var(--bg);
+}
+
+.encabezado {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--borde);
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+}
+
+.titulo {
+  font-family: var(--serif);
+  font-size: 2.6rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--texto);
+}
+
+.contador {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gris);
+}
+
+.lista-productos {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-producto {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--borde-suave);
+}
+
+.img-wrap {
+  width: 88px;
+  height: 68px;
+  background: #C8C0B5;
+  flex-shrink: 0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info { flex: 1; }
+
+.categoria {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--acento);
+  margin-bottom: 5px;
+}
+
+.nombre {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--texto);
+  margin-bottom: 3px;
+}
+
+.variante {
+  font-size: 0.78rem;
+  color: var(--gris-claro);
+  font-weight: 300;
+}
+
+.acciones {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.btn-eliminar {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--gris);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control-cant {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--borde);
+  border-radius: 20px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.btn-cant {
+  width: 30px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--texto);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cant {
+  width: 24px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--texto);
+}
+
+.precio-label {
+  font-size: 0.7rem;
+  color: var(--gris-claro);
+  font-style: italic;
+}
+
+.como-funciona {
+  border: 1px dashed var(--borde);
+  border-radius: 4px;
+  padding: 28px 32px;
+  margin-top: 12px;
+  background: var(--bg-claro);
+}
+
+.como-titulo {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gris);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.linea-corta {
+  display: inline-block;
+  width: 60px;
+  height: 1px;
+  background: var(--borde);
+  flex-shrink: 0;
+}
+
+.como-texto {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: #4a4240;
+  font-weight: 300;
+}
+
+.btn-agregar {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 28px;
+  padding: 13px 26px;
+  border: 1.5px solid var(--marron-claro);
+  background: transparent;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: var(--marron);
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-agregar:hover {
+  background: var(--marron-claro);
+  color: #fff;
+}
+
+.resumen {
+  width: 300px;
+  background: var(--oscuro);
+  color: #f0ebe4;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 28px 36px;
+}
+
+.resumen-titulo {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #f0ebe4;
+  margin-bottom: 32px;
+}
+
+.lista-lineas {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.linea-pedido {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: #b8b0a4;
+}
+
+.linea-nombre { font-weight: 300; }
+
+.linea-precio {
+  font-size: 0.7rem;
+  color: #8a8280;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 18px;
+  border-top: 1px solid #2e2c2a;
+  font-size: 0.82rem;
+  color: #d8d0c8;
+  margin-bottom: 28px;
+}
+
+.total-label { font-weight: 400; }
+.total-dash { color: #4a4240; }
+.total-valor { font-size: 0.75rem; color: #8a8280; font-style: italic; }
+
+.sin-precio {
+  background: #2a1f0f;
+  border-left: 3px solid var(--acento);
+  padding: 16px 18px;
+  border-radius: 2px;
+  margin-bottom: auto;
+}
+
+.sin-precio-titulo {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--acento);
+  margin-bottom: 8px;
+}
+
+.sin-precio-texto {
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: #c8b8a4;
+  font-weight: 300;
+}
+
+.btn-whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 32px;
+  padding: 16px 20px;
+  background: var(--ws);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.btn-whatsapp span {
+  text-align: center;
+  font-size: 11px;
+}
+
+.icono-ws {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+>>>>>>> Stashed changes
