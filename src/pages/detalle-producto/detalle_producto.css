@@ -231,18 +231,29 @@
         margin-top: 20px;
     }
     .tarjetas_s_s{
-        display: grid;
+        display: flex;
         margin: auto;
+
     }
     .t_espc_dp {
-    display: grid;
-    grid-template-columns: 50px 1fr;
-    gap: 15px;
-    align-items: start;
+        display: grid;
+        grid-template-columns: 90px 1fr;
+        gap: 15px;
+        align-items: start;
     }
 
     .espc_prod {
         text-align: right;
         word-break: break-word;
+    }
+    .sep_dp .linea_dp{
+        height:1.4px;
+    }
+    .tarjeta-producto{
+        display: none;
+    }
+    /*  */
+    .tarjeta-producto:nth-of-type(1), .tarjeta-producto:nth-of-type(2) {
+        display: grid;
     }
 }
