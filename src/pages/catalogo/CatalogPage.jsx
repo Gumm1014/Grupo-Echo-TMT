@@ -1,11 +1,7 @@
 import CatalogHeader  from "../../components/catalogo/CatalogHeader.jsx";
 import CatalogSidebar from "../../components/catalogo/CatalogSidebar.jsx";
-<<<<<<< Updated upstream
-import ProductGrid from "../../components/catalogo/ProductGrid.jsx";
-=======
 import ProductGrid    from "../../components/catalogo/ProductGrid.jsx";
 import "../../App.css";
->>>>>>> Stashed changes
 import "./CatalogPage.css";
 
 function CatalogPage() {
