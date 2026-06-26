@@ -9,12 +9,12 @@ function Header() {
                 <img className="img_logotmt" src="./logo_tmt.png" alt="Logo TMT" />
 
                 <nav className="lista">
-                    
+
                     <Link className="link_nav" href="/home"><p>INICIO</p></Link>
                     <Link className="link_nav" href="/catalogo"><p>CATÁLOGO</p></Link>
                     <Link className="link_nav" href="/preguntasfrecuentes"><p>PREGUNTAS FRECUENTES</p></Link>
-                    
-                    
+
+
                 </nav>
 
                 <Link href="/carrito"><img className="img_carrito desktop-only" src="./carrito_icono.png" alt="Carrito" /></Link>
@@ -34,22 +34,35 @@ function Header() {
 
                 <nav>
                     <ul className="mobile-menu__list">
-                        <li className="mobile-menu__item">
-                            <img src="./casita.png" alt="" className="mobile-menu__icon" />
-                            <span>HOME</span>
-                        </li>
-                        <li className="mobile-menu__item">
-                            <img src="./mueblecito.png" alt="" className="mobile-menu__icon" />
-                            <span>CATALOGO</span>
-                        </li>
-                        <li className="mobile-menu__item">
-                            <img src="./pregunta-frec.png" alt="" className="mobile-menu__icon" />
-                            <span>PREGUNTAS FRECUENTES</span>
-                        </li>
-                        <li className="mobile-menu__item">
-                            <img src="./carrito-header.png" alt="" className="mobile-menu__icon" />
-                            <span>CARRITO</span>
-                        </li>
+                        <Link className="link_nav" href="/home">
+                            <li className="mobile-menu__item">
+                                <img src="./casita.png" alt="" className="mobile-menu__icon" />
+                                <span>HOME</span>
+                            </li>
+                        </Link>
+                        <Link className="link_nav" href="/catalogo">
+                            <li className="mobile-menu__item">
+                                <img src="./mueblecito.png" alt="" className="mobile-menu__icon" />
+                                <span>CATALOGO</span>
+                            </li>
+                        </Link>
+                        <Link className="link_nav" href="/preguntasfrecuentes">
+                            <li className="mobile-menu__item">
+                                <img src="./pregunta-frec.png" alt="" className="mobile-menu__icon" />
+                                <span>PREGUNTAS FRECUENTES</span>
+                            </li>
+                        </Link>
+
+                        <Link className="link_nav" href="/carrito">
+                            <li className="mobile-menu__item">
+                                <img src="./carrito-header.png" alt="" className="mobile-menu__icon" />
+                                <span>CARRITO</span>
+                            </li>
+                        </Link>
+
+
+
+
                     </ul>
                 </nav>
             </div>

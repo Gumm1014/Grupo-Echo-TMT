@@ -1,7 +1,7 @@
 .seccion_det_p{
     background-color: #F5F0E8;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     padding-top: 10px;
     justify-content: center;
     max-width: 100%;
@@ -67,7 +67,7 @@
     justify-content: space-between;
 }
 .t_espc_dp .titu_prod{
-    font-size: clamp(5px, 1.5vw, 15px);
+    font-size: clamp(13px, 1.5vw, 15px);
     font-weight: bold;
     margin-top: 6px;
     margin-bottom: 1px;
@@ -107,7 +107,7 @@
 }
 .espc_prod {
     font-size: 13px;
-    font-size: clamp(5px, 1vw, 13px);
+    font-size: clamp(11px, 1vw, 13px);
     font-weight: bold;
     margin-top: 8px;
     margin-bottom: 1px;
@@ -126,7 +126,7 @@
     align-items: center;
 
     color: #FFFFFF;
-    font-size: clamp(5px, 1vw, 15px);
+    font-size: clamp(15px, 1vw, 15px);
     font-weight: 500;
     font-family: "DM Sans", sans-serif;
     letter-spacing: 1px;
@@ -184,4 +184,80 @@
     flex-direction: row;
     justify-content: space-between;
     gap: 60px;
+}
+
+@media (max-width: 790px) {
+    .primer_seccion_dp{
+        display: grid;
+        gap: 20px;
+        justify-content: center;
+        width: 100%;
+        margin: auto;
+        margin-top: -50px;
+        
+    }
+    
+    .imgs_dp {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        align-items: center;
+    }
+
+    .imagen_principal_dp {
+        width: 90%;
+        max-width: 450px;
+        height: auto;
+        margin: 0;
+    }
+
+    .otros_img_dp {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        gap: 30px;
+        margin: 10px 0px 0px;
+    }
+
+    .otros_img_dp img {
+        width: 25%;
+        max-width: 80px;
+    }
+    
+    .info_dp{
+        width: 90%;
+        margin: auto;
+        margin-top: 20px;
+    }
+    .tarjetas_s_s{
+        display: flex;
+        margin: auto;
+
+    }
+    .t_espc_dp {
+        display: grid;
+        grid-template-columns: 90px 1fr;
+        gap: 15px;
+        align-items: start;
+    }
+
+    .espc_prod {
+        text-align: right;
+        word-break: break-word;
+    }
+    .sep_dp .linea_dp{
+        height:1.4px;
+    }
+    .sep_dp .circulo_dp{
+        font-weight: 100;
+        font-size: 28px;
+    }
+    .tarjeta-producto{
+        display: none;
+    }
+    /*  */
+    .tarjeta-producto:nth-of-type(1), .tarjeta-producto:nth-of-type(2) {
+        display: grid;
+    }
 }

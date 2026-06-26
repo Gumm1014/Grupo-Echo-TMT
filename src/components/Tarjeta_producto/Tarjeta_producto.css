@@ -31,7 +31,7 @@
     color: #C4956A;
     font-family: "DM Sans", sans-serif ; 
     letter-spacing: 1px;
-    font-size: clamp(5px, 1.1vw, 11px);
+    font-size: clamp(6px, 1.1vw, 11px);
     font-weight: 600;
     margin-top: 10px;
     line-height: 1.4;
@@ -60,7 +60,7 @@
 
 .ver_detalles{
     display: flex;
-    font-size: clamp(3px, 1vw, 11px);
+    font-size: clamp(6px, 1vw, 11px);
     font-weight: 600;
     font-family: "DM Sans", sans-serif ;
     justify-content: space-between; 
@@ -75,4 +75,9 @@
 .fl_vd{
     display: flex;
     align-items: center;
+}
+.fl_vd img{
+    width: clamp(4px, 2vw, 10px);
+   
+    height: 3px;
 }
