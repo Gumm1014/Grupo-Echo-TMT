@@ -4,8 +4,9 @@ import "./ProductCard.css";
 function ProductCard() {
   return (
     <article className="product-card">
+
       <div className="product-card__image-wrap">
-        <img src="/prod 4.png" alt="Sofá" />
+        <img className="product-card__image" src="/prod 4.png" alt="Sofá" />
       </div>
 
       <div className="product-card__body">

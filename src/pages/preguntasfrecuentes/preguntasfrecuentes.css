@@ -1,0 +1,231 @@
+.pfreq-section {
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.pfreq-header {
+    background-color: #161412;
+    color: #fff;
+    padding: 28px 64px;
+    margin: 0;
+}
+
+.pfreq-header h2 {
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin: 0 0 8px 0;
+    padding: 0;
+}
+
+.pfreq-header h2 span {
+    color: #b9824f;
+}
+
+.pfreq-header p {
+    max-width: 380px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #cfcfcf;
+    margin: 0;
+    padding: 0;
+}
+
+.pfreq-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 64px 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pfreq-title h3 {
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #161412;
+    margin: 0 0 32px 0;
+    padding: 0;
+    line-height: 1.25;
+}
+
+.pfreq-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.pfreq-item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 16px 0;
+    margin: 0;
+    border-bottom: 1px solid #ddd3c5;
+}
+
+/* reseteo defensivo: anula cualquier margen/padding global heredado */
+.pfreq-item * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.pfreq-item:first-child {
+    border-top: 1px solid #ddd3c5;
+}
+
+.pfreq-item span {
+    font-family: "Lato", sans-serif;
+    font-size: 0.95rem;
+    font-style: italic;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.3;
+}
+
+.pfreq-item button {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid #6b6b6b;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    line-height: 0;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.pfreq-item button:hover {
+    background-color: #161412;
+    border-color: #161412;
+}
+
+.pfreq-icon {
+    position: relative;
+    display: block;
+    width: 10px;
+    height: 10px;
+    transition: transform 0.25s ease;
+}
+
+.pfreq-icon::before,
+.pfreq-icon::after {
+    content: "";
+    position: absolute;
+    background-color: #6b6b6b;
+    transition: background-color 0.25s ease;
+}
+
+.pfreq-icon::before {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    transform: translateY(-50%);
+}
+
+.pfreq-icon::after {
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    transform: translateX(-50%);
+}
+
+.pfreq-item button:hover .pfreq-icon::before,
+.pfreq-item button:hover .pfreq-icon::after {
+    background-color: #fff;
+}
+
+
+/* ========================= */
+/* TABLET */
+/* ========================= */
+@media (max-width: 768px) {
+    .pfreq-header {
+        padding: 24px 32px;
+    }
+
+    .pfreq-header h2 {
+        font-size: 1.9rem;
+    }
+
+    .pfreq-header p {
+        max-width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .pfreq-content {
+        padding: 40px 32px;
+    }
+
+    .pfreq-title h3 {
+        font-size: 1.7rem;
+        margin-bottom: 24px;
+    }
+
+    .pfreq-item {
+        gap: 16px;
+    }
+
+    .pfreq-item span {
+        font-size: 0.9rem;
+    }
+}
+
+/* ========================= */
+/* CELULAR */
+/* ========================= */
+@media (max-width: 480px) {
+    .pfreq-header {
+        padding: 20px;
+    }
+
+    .pfreq-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .pfreq-header p {
+        max-width: 100%;
+        font-size: 0.85rem;
+        margin: 0 auto;
+    }
+
+    .pfreq-content {
+        padding: 30px 20px;
+    }
+
+    .pfreq-title h3 {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+
+    .pfreq-item {
+        padding: 14px 0;
+        gap: 12px;
+    }
+
+    .pfreq-item span {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+
+    .pfreq-item button {
+        width: 22px;
+        height: 22px;
+    }
+
+    .pfreq-icon {
+        width: 8px;
+        height: 8px;
+    }
+}

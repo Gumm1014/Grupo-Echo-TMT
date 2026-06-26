@@ -4,9 +4,10 @@ import './App.css'
 import Header from './components/Header/Header.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import Home from "./pages/home/home.jsx"
-import Carrito from "./pages/carrito/carrito.jsx"
 import Detalle_p from "./pages/detalle-producto/detalle_producto.jsx"
 import CatalogPage from "./pages/catalogo/CatalogPage.jsx"
+import Carrito from "./pages/carrito/carrito.jsx"
+import PreguntasFrecuentes from './pages/preguntasfrecuentes/preguntasfrecuentes.jsx';
 function App() {
   return (
     <>
@@ -18,10 +19,11 @@ function App() {
           <Route path="/detalle-producto" component={Detalle_p} />
 
           <Route path="/catalogo" component={CatalogPage} />
+          <Route path="/preguntasfrecuentes" component={PreguntasFrecuentes} />
 
         </Switch>
-      
-      <Footer />
+
+        <Footer />
 
       </Router>
 

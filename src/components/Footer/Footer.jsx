@@ -1,5 +1,5 @@
 import './Footer.css';
-
+import { Link } from 'wouter';
 export default function Footer() {
   return (
     <>
@@ -14,9 +14,10 @@ export default function Footer() {
         <div>
           <div className="footer-col-title">Navegacion</div>
           <ul className="footer-links">
-            <li>Inicio</li>
-            <li>Catálogo</li>
-            <li>Cotización</li>
+
+            <Link className="link_nav" href="/home"><li>Inicio</li></Link>
+            <Link className="link_nav" href="/catalogo"><li>Catálogo</li></Link>
+            <Link className="link_nav" href="/carrito"><li>Cotización</li></Link>
           </ul>
         </div>
         <div>

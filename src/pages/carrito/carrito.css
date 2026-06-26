@@ -334,3 +334,93 @@ body {
   height: 22px;
   flex-shrink: 0;
 }
+<<<<<<< HEAD
+=======
+
+@media (max-width: 768px) {
+  .pagina {
+    flex-direction: column;
+  }
+
+  .contenido {
+    padding: 32px 20px 48px;
+  }
+
+  .titulo {
+    font-size: 1.8rem;
+  }
+
+  .contador {
+    font-size: 0.6rem;
+  }
+
+  .resumen {
+    display: none;
+  }
+
+  .item-producto {
+    gap: 14px;
+    padding: 20px 0;
+    position: relative;
+    flex-wrap: wrap;
+  }
+
+  .img-wrap {
+    width: 76px;
+    height: 58px;
+  }
+
+  .nombre {
+    font-size: 0.95rem;
+  }
+
+  .acciones {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+
+  .btn-eliminar {
+    position: absolute;
+    top: 18px;
+    right: 0;
+  }
+
+  .btn-agregar {
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .btn-whatsapp-mobile {
+    display: flex;
+  }
+}
+
+.btn-whatsapp-mobile {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 16px 20px;
+  background: var(--ws);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.btn-whatsapp-mobile .icono-ws {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+>>>>>>> main

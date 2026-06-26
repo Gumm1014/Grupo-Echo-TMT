@@ -1,7 +1,7 @@
 import CatalogHeader  from "../../components/catalogo/CatalogHeader.jsx";
 import CatalogSidebar from "../../components/catalogo/CatalogSidebar.jsx";
-import ProductGrid    from "../../components/catalogo/ProductGrid.jsx";
-import "../../App.css";
+import ProductGrid from "../../components/catalogo/ProductGrid.jsx";
+import '../../App.css';
 import "./CatalogPage.css";
 
 function CatalogPage() {
