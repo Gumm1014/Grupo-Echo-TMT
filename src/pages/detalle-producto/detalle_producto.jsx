@@ -28,22 +28,22 @@ function detalle_producto() {
                 <p className="titu_prod">Estilo</p>
                 <p className="espc_prod">Estrella</p>
               </div>
-              <div class="linea_dp"></div>
+              <div className="linea_dp"></div>
               <div className="t_espc_dp">
                 <p className="titu_prod">Medidas</p>
                 <p className="espc_prod">100x100x78cm</p>
               </div>
-              <div class="linea_dp"></div>
+              <div className="linea_dp"></div>
               <div className="t_espc_dp">
                 <p className="titu_prod">Peso</p>
                 <p className="espc_prod">99 kg</p>
               </div>
-              <div class="linea_dp"></div>
+              <div className="linea_dp"></div>
               <div className="t_espc_dp">
                 <p className="titu_prod">Tapa</p>
                 <p className="espc_prod">Enchapada en Paraíso o Petiribí</p>
               </div>
-              <div class="linea_dp"></div>
+              <div className="linea_dp"></div>
               <div className="t_espc_dp">
                 <p className="titu_prod">Lustre</p>
                 <p className="espc_prod">Natural, Miel, Petiribí, Wengué, Nogal, Blanco y Negro.</p>
@@ -61,9 +61,9 @@ function detalle_producto() {
       </div>
 
       <div className="sep_dp">
-        <div class="linea_dp"></div>
+        <div className="linea_dp"></div>
         <div className="circulo_dp">o</div>
-        <div class="linea_dp"></div>
+        <div className="linea_dp"></div>
       </div>
 
       <div className="seccion_de_sugerencias">

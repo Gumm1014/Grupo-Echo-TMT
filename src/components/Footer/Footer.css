@@ -61,7 +61,7 @@
 
 .footer-contact-item { 
     font-family: "DM Sans", sans-serif ; 
-    font-size: clamp(12px, 1vw, 13px); 
+    font-size: clamp(10px, 1vw, 13px); 
     color: #999; 
     margin-bottom: 6px; 
 }
@@ -76,7 +76,7 @@
 
 .footer-bottom-text { 
     font-family: "DM Sans", sans-serif ; 
-    font-size: clamp(9px, 2vw, 11px);
+    font-size: clamp(6px, 2vw, 11px);
     color: #fff; 
 }
 
