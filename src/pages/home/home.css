@@ -1,5 +1,617 @@
-* {
-    margin: 0;
-    padding: 0;
+.home-page {
+    width: 100%;
+    background-color: #fff;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.home-hero {
+    position: relative;
+    width: 100%;
+    min-height: 560px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url("https://blog.jamar.com/wp-content/smush-webp/SALA-BEIGE.jpg.webp");
+    background-size: cover;
+    background-position: center;
+}
+
+.home-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #765E39;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.home-hero-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 34px 90px;
+}
+
+.home-hero-content h1 {
+    font-family: DM Serif Display;
+    font-weight: 9000;
+    font-size: 2.5rem;
+    color: #fff;
+    max-width: 640px;
+    line-height: 1.1;
+    margin: 0 0 28px;
+    max-width: 400px;
+}
+
+.home-search {
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 27px;
+}
+
+.home-search svg {
+    width: 18px;
+    height: 18px;
+    color: #888;
+    flex-shrink: 0;
+}
+
+.home-search input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 0.85rem;
+    background: transparent;
+}
+
+
+.home-features {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1250px;
+
+    display: flex;
+    gap: 120px;
+    padding: 0 24px;
     box-sizing: border-box;
+}
+
+.home-feature-card {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    padding: 24px 20px;
+    text-align: center;
+}
+
+.home-feature-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #b9824f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 14px;
+}
+
+.home-feature-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.home-feature-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #161412;
+    margin: 0 0 8px;
+}
+
+.home-feature-card p {
+    font-size: 0.90rem;
+    color: #777;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ---------- CATEGORIAS ---------- */
+.home-categorias {
+    width: 100%;
+    max-width: 100%;
+    padding: 140px 10px 40px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.home-categorias h2 {
+    font-weight: 400;
+    margin-bottom: 35px;
+}
+
+.home-categorias-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    width: 100%;
+}
+
+.home-categoria-card {
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 8px;
+    aspect-ratio: 16 / 9;
+}
+
+.home-categoria-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: relative;
+    z-index: 0;
+}
+
+.home-categoria-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(118, 94, 57, .4);
+    z-index: 1;
+}
+
+
+.home-categoria-card span {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    z-index: 10;
+    /* importante */
+    color: #fff;
+    font-size: 20px;
+    font-family: Inria Sans;
+    font-weight: 400;
+}
+
+/* ---------- OFERTAS ---------- */
+.home-ofertas {
+    width: 100%;
+    background: #fff;
+    padding: 10px 32px 40px;
+}
+
+.home-ofertas-titulo {
+    position: relative;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.home-ofertas-titulo::before,
+.home-ofertas-titulo::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 42%;
+    height: 1px;
+    background: #d8d8d8;
+}
+
+.home-ofertas-titulo::before {
+    left: 0;
+}
+
+.home-ofertas-titulo::after {
+    right: 0;
+}
+
+.home-ofertas-titulo h2 {
+    display: inline-block;
+    background: #fff;
+    padding: 0 20px;
+
+    font-size: 1.1 rem;
+    font-weight: 400;
+    color: #444;
+}
+
+.home-oferta-card {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+
+    background: transparent;
+    padding: 0;
+}
+
+.home-oferta-img {
+    width: 480px;
+    object-fit: contain;
+}
+
+.home-oferta-info {
+    max-width: 600px;
+}
+
+.home-oferta-info h3 {
+    font-family: Inria Sans;
+    font-style: italic;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: #6b5640;
+
+    margin-bottom: 10px;
+}
+
+.home-oferta-info p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #444;
+
+    margin-bottom: 20px;
+}
+
+.home-oferta-descuento {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #111;
+
+    margin-bottom: 20px;
+}
+
+.home-oferta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+
+    border: 3px solid #25D366;
+    /* antes 1px */
+    background: transparent;
+
+    color: #25D366;
+    font-weight: 700;
+    /* nuevo */
+
+    padding: 7px 13px;
+    border-radius: 7px;
+
+    cursor: pointer;
+}
+
+.home-oferta-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/*=========================
+        DESTACADOS
+==========================*/
+
+.home-destacados {
+
+    width: 100%;
+    padding: 30px 20px;
+    background: #fff;
+    border-top: 1px solid #e2e2e2;
+    padding-top: 50px;
+}
+
+.home-destacados-subtitulo {
+
+    display: block;
+
+    text-align: center;
+
+    color: #b9824f;
+
+    font-size: .9rem;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.home-destacados h2 {
+
+    text-align: center;
+
+    font-family: Inria Sans;
+
+    font-weight: 400;
+
+    font-size: 1.5rem;
+
+    color: #222;
+
+    margin-bottom: 40px;
+}
+
+.home-destacados-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 18px;
+}
+
+.home-producto-card {
+
+    background: #fff;
+
+    border-radius: 6px;
+
+    overflow: hidden;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.home-producto-card img {
+
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+}
+
+.home-producto-info {
+
+    padding: 12px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+}
+
+.home-producto-info h3 {
+
+    font-family: Georgia, serif;
+
+    font-size: 1rem;
+
+    font-weight: 500;
+
+    color: #444;
+
+    margin-bottom: 8px;
+}
+
+.home-producto-linea {
+
+    height: 1px;
+
+    background: #c9a27b;
+
+    margin-bottom: 10px;
+}
+
+.home-caracteristica {
+
+    font-size: .8rem;
+
+    color: #555;
+
+    margin-bottom: 6px;
+
+
+}
+
+.home-producto-descripcion {
+
+    margin-top: 12px;
+
+    font-size: .8rem;
+
+    color: #666;
+
+    line-height: 1.5;
+
+    flex: 1;
+}
+
+.home-producto-info a {
+
+    margin-top: 15px;
+
+    color: #b9824f;
+
+    text-decoration: none;
+
+    font-size: .75rem;
+
+    align-self: flex-start;
+}
+
+.home-producto-info a:hover {
+
+    text-decoration: underline;
+}
+
+/*==========================
+      SOBRE NOSOTROS
+===========================*/
+
+.home-nosotros {
+
+    width: 100%;
+    height: 440px;
+
+    display: flex;
+
+    margin-top: 80px;
+
+    background: #191715;
+
+    overflow: hidden;
+
+}
+
+.home-nosotros-img {
+
+    width: 50%;
+    position: relative;
+
+}
+
+.home-nosotros-img img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+/* sombra oscura sobre TODA la imagen */
+
+.home-nosotros-img::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(25, 23, 21, .18);
+
+}
+
+/* degradado hacia el negro */
+
+.home-nosotros-img::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(to right,
+            rgba(25, 23, 21, 0) 35%,
+            rgba(25, 23, 21, .5) 50%,
+            rgba(25, 23, 21, .85) 65%,
+            #191715 100%);
+
+}
+
+.home-nosotros-info {
+
+    width: 50%;
+
+    background: #191715;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 85px 65px 55px 30px;
+
+    color: white;
+
+}
+
+.home-nosotros-tag {
+
+    color: #b9824f;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 18px;
+
+}
+
+.home-nosotros-info h2 {
+
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+
+    font-weight: 550;
+
+    line-height: 1.25;
+
+    margin-bottom: 22px;
+
+}
+
+.home-nosotros-info p {
+
+    color: #a8a8a8;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    max-width: 600px;
+
+}
+
+.home-nosotros-estadisticas {
+
+    display: flex;
+
+    gap: 85px;
+
+    margin-top: 35px;
+
+}
+
+.home-nosotros-estadisticas h3 {
+
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+
+    font-weight: 500;
+
+    margin-bottom: 4px;
+
+}
+
+.home-nosotros-estadisticas span {
+
+    font-size: 11px;
+
+    color: #d8d8d8;
+
+    line-height: 1.4;
+
 }
