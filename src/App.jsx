@@ -14,12 +14,14 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          <Route path="/" component={Home} />
+
+          <Route path="/home" component={Home} />
           <Route path="/carrito" component={Carrito} />
           <Route path="/detalle-productos" component={Detalle_p} />
 
           <Route path="/catalogo" component={CatalogPage} />
           <Route path="/preguntasfrecuentes" component={PreguntasFrecuentes} />
+          <Route path="/*" component={Home} />
 
         </Switch>
 

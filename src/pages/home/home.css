@@ -417,7 +417,7 @@
 
 .home-caracteristica {
 
-    font-size: .8rem;
+    font-size: .8 rem;
 
     color: #555;
 
@@ -614,4 +614,326 @@
 
     line-height: 1.4;
 
+}
+
+/* =============================================
+   RESPONSIVE — TABLET (≤ 1024px)
+   ============================================= */
+
+@media (max-width: 1024px) {
+
+    /* HERO */
+    .home-hero {
+        min-height: 480px;
+    }
+
+    .home-hero-content h1 {
+        font-size: 2rem;
+        max-width: 480px;
+    }
+
+    .home-features {
+        gap: 20px;
+        padding: 0 16px;
+    }
+
+    .home-feature-card {
+        padding: 20px 14px;
+    }
+
+    .home-feature-card h3 {
+        font-size: 0.95rem;
+    }
+
+    .home-feature-card p {
+        font-size: 0.8rem;
+    }
+
+    /* CATEGORIAS */
+    .home-categorias {
+        padding: 160px 16px 40px;
+    }
+
+    .home-categorias-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+    }
+
+    /* OFERTAS */
+    .home-oferta-card {
+        gap: 36px;
+    }
+
+    .home-oferta-img {
+        width: 340px;
+    }
+
+    .home-oferta-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .home-oferta-info p {
+        font-size: 1.1rem;
+    }
+
+    /* DESTACADOS — 3 columnas en tablet */
+    .home-destacados-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+    }
+
+    /* NOSOTROS */
+    .home-nosotros {
+        height: auto;
+    }
+
+    .home-nosotros-info {
+        padding: 50px 32px 50px 20px;
+    }
+
+    .home-nosotros-info h2 {
+        font-size: 20px;
+    }
+
+    .home-nosotros-info p {
+        font-size: 14px;
+    }
+
+    .home-nosotros-estadisticas {
+        gap: 40px;
+    }
+}
+
+
+/* =============================================
+   RESPONSIVE — MOBILE (≤ 768px)
+   ============================================= */
+
+@media (max-width: 768px) {
+
+    /* ── HERO ── */
+    .home-hero {
+        min-height: unset;
+        flex-direction: column;
+        padding-bottom: 0;
+    }
+
+    .home-hero-content {
+        padding: 40px 20px 40px;
+    }
+
+    .home-hero-content h1 {
+        font-size: 1.6rem;
+        max-width: 320px;
+    }
+
+    .home-search {
+        padding: 10px 18px;
+    }
+
+    /* Feature cards: salen del hero y se apilan debajo */
+    .home-features {
+        position: relative;
+        bottom: unset;
+        left: unset;
+        transform: none;
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px 16px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .home-feature-card {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+        gap: 14px;
+        padding: 16px;
+    }
+
+    .home-feature-icon {
+        margin: 0;
+        flex-shrink: 0;
+    }
+
+    .home-feature-card h3 {
+        font-size: 0.9rem;
+        margin-bottom: 4px;
+    }
+
+    .home-feature-card p {
+        font-size: 0.78rem;
+    }
+
+    /* ── CATEGORIAS: 2 imágenes ── */
+    .home-categorias {
+        padding: 32px 12px;
+    }
+
+    .home-categorias h2 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+    .home-categorias-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    /* Ocultar la 3ª categoría en móvil */
+    .home-categoria-card:nth-child(3) {
+        display: none;
+    }
+
+    .home-categoria-card {
+        aspect-ratio: 4 / 3;
+        border-radius: 6px;
+    }
+
+    /* ── OFERTAS ── */
+    .home-ofertas {
+        padding: 10px 16px 32px;
+    }
+
+    .home-oferta-card {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    .home-oferta-img {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 6px;
+    }
+
+    .home-oferta-info {
+        max-width: 100%;
+    }
+
+    .home-oferta-info h3 {
+        font-size: 1.3rem;
+    }
+
+    .home-oferta-info p {
+        font-size: 1rem;
+    }
+
+    /* Descuento + botón en la misma fila */
+    .home-oferta-descuento {
+        display: inline;
+        font-size: 1rem;
+        margin-bottom: 0;
+        margin-right: 14px;
+    }
+
+    .home-oferta-btn {
+        display: inline-flex;
+        font-size: 0.95rem;
+        padding: 6px 12px;
+        vertical-align: middle;
+    }
+
+    /* Contenedor para alinear descuento + botón en fila */
+    .home-oferta-info .home-oferta-descuento-row {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-bottom: 0;
+    }
+
+    /* ── DESTACADOS: 1 columna, solo 3 tarjetas ── */
+    .home-destacados {
+        padding: 32px 12px;
+    }
+
+    .home-destacados h2 {
+        font-size: 1.2rem;
+        margin-bottom: 24px;
+    }
+
+    .home-destacados-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    /* Ocultar tarjetas 4 y 5 en móvil */
+    .home-producto-card:nth-child(n+4) {
+        display: none;
+    }
+
+    .home-producto-card img {
+        height: 200px;
+    }
+
+    /* ── NOSOTROS ── */
+    .home-nosotros {
+        flex-direction: column;
+        height: auto;
+        margin-top: 40px;
+    }
+
+    .home-nosotros-img {
+        width: 100%;
+        height: 240px;
+    }
+
+    .home-nosotros-img::after {
+        background: linear-gradient(to bottom,
+                rgba(25, 23, 21, 0) 50%,
+                rgba(25, 23, 21, .7) 80%,
+                #191715 100%);
+    }
+
+    .home-nosotros-info {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 32px 20px 40px;
+    }
+
+    .home-nosotros-info h2 {
+        font-size: 18px;
+    }
+
+    .home-nosotros-info p {
+        font-size: 14px;
+    }
+
+    /* Estadísticas en fila (25+ y 800+ lado a lado) */
+    .home-nosotros-estadisticas {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        margin-top: 24px;
+    }
+
+    .home-nosotros-estadisticas h3 {
+        font-size: 20px;
+    }
+}
+
+
+/* =============================================
+   RESPONSIVE — MOBILE SMALL (≤ 480px)
+   ============================================= */
+
+@media (max-width: 480px) {
+
+    .home-hero-content h1 {
+        font-size: 1.3rem;
+        max-width: 280px;
+    }
+
+    .home-ofertas-titulo::before,
+    .home-ofertas-titulo::after {
+        width: 28%;
+    }
+
+    .home-nosotros-estadisticas {
+        gap: 28px;
+    }
 }
