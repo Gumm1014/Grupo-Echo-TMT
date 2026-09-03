@@ -1,5 +1,5 @@
 import "./home.css";
-
+import { Link } from "wouter";
 
 import principalImg from "../../assets/principal.png";
 import dormitorioImg from "../../assets/dormitorio.png";
@@ -163,7 +163,13 @@ function Home() {
               calidad, con estructura resistente y diseño elegante.
             </p>
             <span className="home-oferta-descuento">30% de descuento</span>
-            <button className="home-oferta-btn">
+            <a
+              href="https://wa.me/5492901535524?text=Hola!%20Quisiera%20consultar%20por%20la%20oferta%20del%20Sill%C3%B3n%20N%C3%B3rdico"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="home-oferta-btn"
+              style={{ textDecoration: 'none' }}
+            >
               Consultar
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -178,7 +184,7 @@ function Home() {
                   strokeLinecap="round"
                 />
               </svg>
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -227,9 +233,9 @@ function Home() {
                   {producto.descripcion}
                 </p>
 
-                <a href="#">
+                <Link href="/detalle-productos">
                   Ver más...
-                </a>
+                </Link>
 
               </div>
 
