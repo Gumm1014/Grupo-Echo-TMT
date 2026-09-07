@@ -6,12 +6,16 @@ import dormitorioImg from "../../assets/dormitorio.png";
 import cocinaImg from "../../assets/cocina.png";
 import livingImg from "../../assets/living.png";
 import trabajadoresImg from "../../assets/trabajadores.png";
+import { useState } from "react";
+import "./home.css";
+
 
 import seleccionImg from "../../assets/seleccion.png";
 import medidaImg from "../../assets/medida.png";
 import presupuestoImg from "../../assets/presupuesto.png";
 
 function Home() {
+  const [busqueda, setBusqueda] = useState("");
   const features = [
     {
       title: "Madera Seleccionada",
@@ -108,7 +112,12 @@ function Home() {
               <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="1.8" />
               <path d="M20 20l-3.5-3.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
             </svg>
-            <input type="text" placeholder="Buscar muebles..." />
+            <input
+              type="text"
+              placeholder="Buscar muebles..."
+              value={busqueda}
+              onChange={(e) => setBusqueda(e.target.value)}
+            />
           </div>
         </div>
 
