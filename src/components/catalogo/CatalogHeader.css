@@ -1,9 +1,21 @@
+
 .catalog-header {
   position: relative;
-  background: #0d0d0d;
   overflow: hidden;
   border-bottom: 3px solid var(--color-accent);
-  height: 220px; 
+  height: 220px;
+  background: 
+    linear-gradient(
+      to right,
+      #0d0d0d 0%,
+      #0d0d0d9d 0%,
+      rgba(13,13,13,0.6) 60%,
+      transparent 100%
+      
+      
+    ),
+    url('/prod 4.png') right center / 50% no-repeat,
+    #0d0d0d;
 }
 
 .catalog-header__image-wrap {
@@ -105,12 +117,25 @@
   margin: 0;
   max-width: 300px;
 }
+.catalog-header__image {
+  display: none;
+}
 
 @media (max-width: 768px) {
-  .catalog-header {
+ .catalog-header {
     height: 200px;
+    background: #0d0d0d; 
   }
 
+  .catalog-header__image {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+  }
   .catalog-header__content {
     padding: 0 0 0 24px;
   }

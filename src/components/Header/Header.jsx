@@ -55,7 +55,7 @@ function Header() {
 
                         <Link className="link_nav" href="/carrito">
                             <li className="mobile-menu__item">
-                                <img src="./carrito-header.png" alt="" className="mobile-menu__icon" />
+                                <img src="./carrito_marron.png" alt="" className="mobile-menu__icon" />
                                 <span>CARRITO</span>
                             </li>
                         </Link>
