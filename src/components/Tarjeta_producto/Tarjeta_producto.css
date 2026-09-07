@@ -78,6 +78,5 @@
 }
 .fl_vd img{
     width: clamp(4px, 2vw, 10px);
-   
     height: 3px;
 }
