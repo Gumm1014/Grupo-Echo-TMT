@@ -57,7 +57,6 @@ function ProductGrid() {
 
   return (
     <div className="product-grid">
-      <div>
         {
           productos.map((producto) => (
             <ProductCard
@@ -65,8 +64,6 @@ function ProductGrid() {
               producto={producto} />
           ))
         }
-      </div>
-
     </div>
   );
 }
