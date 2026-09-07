@@ -18,12 +18,12 @@ function ProductGrid() {
       const datos = await resp.json();
 
       const filas = datos.values;
-      const filasProductos = filas.slice(1); // saco la fila 0, que son los encabezados
+      const filasProductos = filas.slice(1);
 
       const listaProductos = [];
 
       for (let i = 0; i < filasProductos.length; i++) {
-        const fila = filasProductos[i]; // ej: ["1", "keke", "Dormitorio", "242", ...]
+        const fila = filasProductos[i];
 
         const producto = {
           id: fila[0],
