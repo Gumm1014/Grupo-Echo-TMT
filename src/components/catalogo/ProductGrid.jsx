@@ -20,33 +20,24 @@ function ProductGrid() {
       const filas = datos.values;
       const filasProductos = filas.slice(1);
 
-      const listaProductos = [];
-
-      for (let i = 0; i < filasProductos.length; i++) {
-        const fila = filasProductos[i];
-
-        const producto = {
-          id: fila[0],
-          nombre: fila[1],
-          categoria: fila[2],
-          descripcion: fila[3],
-          materiales: fila[4],
-          disponibilidad: fila[5],
-          tiempoFabricacion: fila[6],
-          ancho: fila[7],
-          largo: fila[8],
-          estilo: fila[9],
-          medidas: fila[10],
-          peso: fila[11],
-          tapaTerminacion: fila[12],
-          lustreColores: fila[13],
-          imagen1: fila[14] || "",
-          imagen2: fila[15] || "",
-          imagen3: fila[16] || "",
-        };
-
-        listaProductos.push(producto);
-      }
+      const listaProductos = filasProductos.map((fila) => ({
+        id: fila[0],
+        nombre: fila[1],
+        categoria: fila[2],
+        descripcion: fila[3],
+        materiales: fila[4],
+        tiempoFabricacion: fila[5],
+        ancho: fila[6],
+        largo: fila[7],
+        estilo: fila[8],
+        medidas: fila[9],
+        peso: fila[10],
+        tapaTerminacion: fila[11],
+        lustreColores: fila[12],
+        imagen1: fila[13] || "",
+        imagen2: fila[14] || "",
+        imagen3: fila[15] || "",
+      }));
 
       setProductos(listaProductos);
     } catch (error) {
@@ -60,7 +51,7 @@ function ProductGrid() {
         {
           productos.map((producto) => (
             <ProductCard
-              id={producto.id}
+              key={producto.id}
               producto={producto} />
           ))
         }

@@ -1,4 +1,4 @@
-export default function ItemProducto({ categoria, nombre, variante, imagen }) {
+export default function ItemProducto({ categoria, nombre, variante, imagen, cantidad, onEliminar, onSumar, onRestar }) {
   return (
     <div className="item-producto">
       <div className="img-wrap">
@@ -12,11 +12,11 @@ export default function ItemProducto({ categoria, nombre, variante, imagen }) {
       </div>
 
       <div className="acciones">
-        <button className="btn-eliminar" aria-label="Eliminar">✕</button>
+        <button className="btn-eliminar" aria-label="Eliminar" onClick={onEliminar}>✕</button>
         <div className="control-cant">
-          <button className="btn-cant" aria-label="Restar">−</button>
-          <span className="cant">1</span>
-          <button className="btn-cant" aria-label="Sumar">+</button>
+          <button className="btn-cant" aria-label="Restar" onClick={onRestar}>−</button>
+          <span className="cant">{cantidad}</span>
+          <button className="btn-cant" aria-label="Sumar" onClick={onSumar}>+</button>
         </div>
         <span className="precio-label">A cotizar</span>
       </div>

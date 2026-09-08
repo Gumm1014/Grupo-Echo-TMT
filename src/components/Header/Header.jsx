@@ -10,7 +10,7 @@ function Header() {
 
                 <nav className="lista">
 
-                    <Link className="link_nav" href="/home"><p>INICIO</p></Link>
+                    <Link className="link_nav" href="/"><p>INICIO</p></Link>
                     <Link className="link_nav" href="/catalogo"><p>CATÁLOGO</p></Link>
                     <Link className="link_nav" href="/preguntasfrecuentes"><p>PREGUNTAS FRECUENTES</p></Link>
 

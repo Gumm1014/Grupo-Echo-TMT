@@ -15,7 +15,7 @@ export default function Footer() {
           <div className="footer-col-title">Navegacion</div>
           <ul className="footer-links">
 
-            <Link className="link_nav" href="/home"><li>Inicio</li></Link>
+            <Link className="link_nav" href="/"><li>Inicio</li></Link>
             <Link className="link_nav" href="/catalogo"><li>Catálogo</li></Link>
             <Link className="link_nav" href="/carrito"><li>Cotización</li></Link>
           </ul>
