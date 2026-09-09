@@ -457,6 +457,33 @@
     text-decoration: underline;
 }
 
+.home-producto-detalle-extra {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed #d8d8d8;
+    font-size: .78rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.home-producto-vermas {
+    margin-top: 15px;
+    align-self: flex-start;
+
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    color: #b9824f;
+    font-size: .75rem;
+    font-family: inherit;
+}
+
+.home-producto-vermas:hover {
+    text-decoration: underline;
+}
+
 /*==========================
       SOBRE NOSOTROS
 ===========================*/

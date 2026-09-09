@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { obtenerCarrito, guardarCarrito } from "../../utils/carrito.js";
+import { useLocation } from "wouter";
 import "./carrito.css";
 import Encabezado from "../../components/carrito/Encabezado";
 import ItemProducto from "../../components/carrito/ItemProducto";
@@ -8,11 +9,10 @@ import ResumenPedido from "../../components/carrito/ResumenPedido";
 
 export default function Carrito() {
   const [carrito, setCarrito] = useState(() => obtenerCarrito());
-
+  const [, setLocation] = useLocation();
   useEffect(() => {
     guardarCarrito(carrito);
   }, [carrito]);
-
   const eliminarProducto = (id) => {
     const nuevoCarrito = [];
 
@@ -118,4 +118,3 @@ export default function Carrito() {
     </div>
   );
 }
-
