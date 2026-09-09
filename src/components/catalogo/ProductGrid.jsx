@@ -1,60 +1,58 @@
+import { useSearch } from "wouter";
 import ProductCard from "./ProductCard.jsx";
+import { useProductos } from "../../hooks/useProductos.js";
 import "./ProductGrid.css";
-import { useEffect, useState } from "react";
 
 function ProductGrid() {
+  const search = useSearch(); // ej: "categoria=Cocina" (sin el "?")
+  const { productos, cargando, error } = useProductos();
 
-  const [productos, setProductos] = useState([]);
+  const parametros = new URLSearchParams(search);
+  const categoria = parametros.get("categoria");
+  const busqueda = parametros.get("buscar");
 
-  useEffect(() => {
-    actualizar();
-  }, []);
+  let filtrados = productos;
 
-  async function actualizar() {
-    try {
-      const url = `https://sheets.googleapis.com/v4/spreadsheets/1551nSJ5je_HKrH2JXx9yEYNiN65tVQNYlknYs1rw2Pk/values/Productos?key=AIzaSyC7xqjgoGTJ8VBe9C-RXinpQcIbBJww1ow`
-
-      const resp = await fetch(url);
-      const datos = await resp.json();
-
-      const filas = datos.values;
-      const filasProductos = filas.slice(1);
-
-      const listaProductos = filasProductos.map((fila) => ({
-        id: fila[0],
-        nombre: fila[1],
-        categoria: fila[2],
-        descripcion: fila[3],
-        materiales: fila[4],
-        tiempoFabricacion: fila[5],
-        ancho: fila[6],
-        largo: fila[7],
-        estilo: fila[8],
-        medidas: fila[9],
-        peso: fila[10],
-        tapaTerminacion: fila[11],
-        lustreColores: fila[12],
-        imagen1: fila[13] || "",
-        imagen2: fila[14] || "",
-        imagen3: fila[15] || "",
-      }));
-
-      setProductos(listaProductos);
-    } catch (error) {
-      console.error(error);
-    }
+  if (categoria) {
+    filtrados = filtrados.filter(
+      (p) => (p.categoria || "").toLowerCase() === categoria.toLowerCase()
+    );
   }
 
+  if (busqueda) {
+    const termino = busqueda.toLowerCase();
+    filtrados = filtrados.filter((p) =>
+      `${p.nombre || ""} ${p.descripcion || ""} ${p.categoria || ""}`
+        .toLowerCase()
+        .includes(termino)
+    );
+  }
+
+  if (cargando) {
+    return <p className="product-grid__mensaje">Cargando productos...</p>;
+  }
+
+  if (error) {
+    return (
+      <p className="product-grid__mensaje">
+        No se pudieron cargar los productos. Intentá de nuevo más tarde.
+      </p>
+    );
+  }
+
+  if (filtrados.length === 0) {
+    return (
+      <p className="product-grid__mensaje">
+        No hay productos que coincidan con tu búsqueda.
+      </p>
+    );
+  }
 
   return (
     <div className="product-grid">
-        {
-          productos.map((producto) => (
-            <ProductCard
-              key={producto.id}
-              producto={producto} />
-          ))
-        }
+      {filtrados.map((producto) => (
+        <ProductCard key={producto.id} producto={producto} />
+      ))}
     </div>
   );
 }

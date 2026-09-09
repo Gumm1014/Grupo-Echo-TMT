@@ -1,14 +1,12 @@
 import "./home.css";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
+import { useState } from "react";
 
 import principalImg from "../../assets/principal.png";
 import dormitorioImg from "../../assets/dormitorio.png";
 import cocinaImg from "../../assets/cocina.png";
 import livingImg from "../../assets/living.png";
 import trabajadoresImg from "../../assets/trabajadores.png";
-import { useState } from "react";
-import "./home.css";
-
 
 import seleccionImg from "../../assets/seleccion.png";
 import medidaImg from "../../assets/medida.png";
@@ -16,6 +14,8 @@ import presupuestoImg from "../../assets/presupuesto.png";
 
 function Home() {
   const [busqueda, setBusqueda] = useState("");
+  const [, navigate] = useLocation();
+
   const features = [
     {
       title: "Madera Seleccionada",
@@ -34,26 +34,26 @@ function Home() {
     }
   ];
 
+  // El "nombre" de cada categoría acá tiene que coincidir con el
+  // "valor" usado en CatalogSidebar.jsx para que el filtro funcione.
   const categorias = [
-    {
-      nombre: "Dormitorio",
-      img: dormitorioImg
-
-    },
-    {
-      nombre: "Cocina",
-      img: cocinaImg
-    },
-    {
-      nombre: "Living",
-      img: livingImg
-    }
-
+    { nombre: "Dormitorio", img: dormitorioImg },
+    { nombre: "Cocina", img: cocinaImg },
+    { nombre: "Living", img: livingImg }
   ];
 
-
   const handleCategoriaClick = (nombre) => {
-    console.log("Ir a categoría:", nombre);
+    navigate(`/catalogo?categoria=${encodeURIComponent(nombre)}`);
+  };
+
+  const buscar = () => {
+    const termino = busqueda.trim();
+    if (!termino) return;
+    navigate(`/catalogo?buscar=${encodeURIComponent(termino)}`);
+  };
+
+  const handleBusquedaKeyDown = (e) => {
+    if (e.key === "Enter") buscar();
   };
 
   const destacados = [
@@ -98,6 +98,7 @@ function Home() {
       descripcion: "Cuenta con una amplia superficie para televisores y espacios de almacenamiento que permiten organizar dispositivos..."
     }
   ];
+
   return (
     <div className="home-page">
       {/* HERO */}
@@ -108,7 +109,13 @@ function Home() {
         <div className="home-hero-content">
           <h1>Muebles que perduran en el tiempo</h1>
           <div className="home-search">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              onClick={buscar}
+              style={{ cursor: "pointer" }}
+            >
               <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="1.8" />
               <path d="M20 20l-3.5-3.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
             </svg>
@@ -117,6 +124,7 @@ function Home() {
               placeholder="Buscar muebles..."
               value={busqueda}
               onChange={(e) => setBusqueda(e.target.value)}
+              onKeyDown={handleBusquedaKeyDown}
             />
           </div>
         </div>
@@ -145,9 +153,7 @@ function Home() {
               onClick={() => handleCategoriaClick(c.nombre)}
             >
               <img src={c.img} alt={c.nombre} />
-
               <span>{c.nombre}</span>
-
             </button>
           ))}
         </div>
@@ -198,81 +204,40 @@ function Home() {
         </div>
       </section>
 
-
       {/* DESTACADOS */}
-
       <section className="home-destacados">
-
-        <span className="home-destacados-subtitulo">
-          DESTACADOS
-        </span>
-
+        <span className="home-destacados-subtitulo">DESTACADOS</span>
         <h2>Algunos de nuestros productos personalizados</h2>
 
         <div className="home-destacados-grid">
-
           {destacados.map((producto, index) => (
-
             <div className="home-producto-card" key={index}>
-
-              <img
-                src={producto.imagen}
-                alt={producto.titulo}
-              />
+              <img src={producto.imagen} alt={producto.titulo} />
 
               <div className="home-producto-info">
-
                 <h3>{producto.titulo}</h3>
-
                 <div className="home-producto-linea"></div>
 
-                <p className="home-caracteristica">
-                  ⏱ {producto.tiempo}
-                </p>
+                <p className="home-caracteristica">⏱ {producto.tiempo}</p>
+                <p className="home-caracteristica">↔ {producto.ancho}</p>
+                <p className="home-caracteristica">↕ {producto.largo}</p>
+                <p className="home-producto-descripcion">{producto.descripcion}</p>
 
-                <p className="home-caracteristica">
-                  ↔ {producto.ancho}
-                </p>
-
-                <p className="home-caracteristica">
-                  ↕ {producto.largo}
-                </p>
-
-                <p className="home-producto-descripcion">
-                  {producto.descripcion}
-                </p>
-
-                <Link href="/detalle-productos">
-                  Ver más...
-                </Link>
-
+                <Link href="/catalogo">Ver más...</Link>
               </div>
-
             </div>
-
           ))}
-
         </div>
-
       </section>
+
       {/* SOBRE NOSOTROS */}
-
       <section className="home-nosotros">
-
         <div className="home-nosotros-img">
-
-          <img
-            src={trabajadoresImg}
-            alt="Nuestro equipo"
-          />
-
+          <img src={trabajadoresImg} alt="Nuestro equipo" />
         </div>
 
         <div className="home-nosotros-info">
-
-          <span className="home-nosotros-tag">
-            ¿QUIÉNES SOMOS?
-          </span>
+          <span className="home-nosotros-tag">¿QUIÉNES SOMOS?</span>
 
           <h2>
             No fabricamos muebles en serie.
@@ -288,37 +253,26 @@ function Home() {
           </p>
 
           <div className="home-nosotros-estadisticas">
-
             <div>
-
               <h3>25+</h3>
-
               <span>
                 Años de
                 <br />
                 trayectoria
               </span>
-
             </div>
 
             <div>
-
               <h3>800+</h3>
-
               <span>
                 Proyectos
                 <br />
                 entregados
               </span>
-
             </div>
-
           </div>
-
         </div>
-
       </section>
-
     </div>
   );
 }

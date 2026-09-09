@@ -94,3 +94,9 @@
   color: var(--color-accent);
   gap: 9px;
 }
+
+.product-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}

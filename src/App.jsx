@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import './App.css'
-import { Router, Switch, Route } from "wouter"; // <-- faltaba esto
+import { Router, Switch, Route } from "wouter";
 import Header from './components/Header/Header.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import Home from "./pages/home/home.jsx"
@@ -17,7 +17,7 @@ function App() {
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/carrito" component={Carrito} />
-        <Route path="/detalle-productos" component={Detalle_p} />
+        <Route path="/detalle-productos/:id" component={Detalle_p} />
         <Route path="/catalogo" component={CatalogPage} />
         <Route path="/preguntasfrecuentes" component={PreguntasFrecuentes} />
       </Switch>
