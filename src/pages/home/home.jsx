@@ -1,5 +1,5 @@
 import "./home.css";
-import { Link, useLocation } from "wouter";
+import { useLocation } from "wouter";
 import { useState } from "react";
 
 import principalImg from "../../assets/principal.png";
@@ -15,6 +15,14 @@ import presupuestoImg from "../../assets/presupuesto.png";
 function Home() {
   const [busqueda, setBusqueda] = useState("");
   const [, navigate] = useLocation();
+  const [destacadosAbiertos, setDestacadosAbiertos] = useState({});
+
+  const toggleDestacado = (index) => {
+    setDestacadosAbiertos((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  };
 
   const features = [
     {
@@ -63,7 +71,8 @@ function Home() {
       tiempo: "28 días",
       ancho: "2,5 m de ancho",
       largo: "1,70 m de largo",
-      descripcion: "Cuenta con una amplia superficie para televisores y espacios de almacenamiento que permiten organizar dispositivos..."
+      descripcion: "Cuenta con una amplia superficie para televisores y espacios de almacenamiento que permiten organizar dispositivos...",
+      detalleExtra: "Fabricado en melamina de 18mm con guías telescópicas de cierre suave. Incluye entrepaños ajustables y barral cromado. Disponible en roble, nogal y blanco."
     },
     {
       titulo: "Vestidor a medida",
@@ -71,7 +80,8 @@ function Home() {
       tiempo: "28 días",
       ancho: "2,5 m de ancho",
       largo: "1,70 m de largo",
-      descripcion: "Cuenta con una amplia superficie para televisores y espacios de almacenamiento que permiten organizar dispositivos..."
+      descripcion: "Cuenta con una amplia superficie para televisores y espacios de almacenamiento que permiten organizar dispositivos...",
+      detalleExtra: "Fabricado en melamina de 18mm con guías telescópicas de cierre suave. Incluye entrepaños ajustables y barral cromado. Disponible en roble, nogal y blanco."
     },
     {
       titulo: "Vestidor a medida",
@@ -79,7 +89,8 @@ function Home() {
       tiempo: "28 días",
       ancho: "2,5 m de ancho",
       largo: "1,70 m de largo",
-      descripcion: "Cuenta con una amplia superficie para televisores y espacios de almacenamiento que permiten organizar dispositivos..."
+      descripcion: "Cuenta con una amplia superficie para televisores y espacios de almacenamiento que permiten organizar dispositivos...",
+      detalleExtra: "Fabricado en melamina de 18mm con guías telescópicas de cierre suave. Incluye entrepaños ajustables y barral cromado. Disponible en roble, nogal y blanco."
     },
     {
       titulo: "Vestidor a medida",
@@ -87,7 +98,8 @@ function Home() {
       tiempo: "28 días",
       ancho: "2,5 m de ancho",
       largo: "1,70 m de largo",
-      descripcion: "Cuenta con una amplia superficie para televisores y espacios de almacenamiento que permiten organizar dispositivos..."
+      descripcion: "Cuenta con una amplia superficie para televisores y espacios de almacenamiento que permiten organizar dispositivos...",
+      detalleExtra: "Fabricado en melamina de 18mm con guías telescópicas de cierre suave. Incluye entrepaños ajustables y barral cromado. Disponible en roble, nogal y blanco."
     },
     {
       titulo: "Vestidor a medida",
@@ -95,7 +107,8 @@ function Home() {
       tiempo: "28 días",
       ancho: "2,5 m de ancho",
       largo: "1,70 m de largo",
-      descripcion: "Cuenta con una amplia superficie para televisores y espacios de almacenamiento que permiten organizar dispositivos..."
+      descripcion: "Cuenta con una amplia superficie para televisores y espacios de almacenamiento que permiten organizar dispositivos...",
+      detalleExtra: "Fabricado en melamina de 18mm con guías telescópicas de cierre suave. Incluye entrepaños ajustables y barral cromado. Disponible en roble, nogal y blanco."
     }
   ];
 
@@ -223,7 +236,19 @@ function Home() {
                 <p className="home-caracteristica">↕ {producto.largo}</p>
                 <p className="home-producto-descripcion">{producto.descripcion}</p>
 
-                <Link href="/catalogo">Ver más...</Link>
+                {destacadosAbiertos[index] && (
+                  <p className="home-producto-detalle-extra">
+                    {producto.detalleExtra}
+                  </p>
+                )}
+
+                <button
+                  type="button"
+                  className="home-producto-vermas"
+                  onClick={() => toggleDestacado(index)}
+                >
+                  {destacadosAbiertos[index] ? "Ver menos" : "Ver más..."}
+                </button>
               </div>
             </div>
           ))}
