@@ -98,7 +98,12 @@ export default function Carrito() {
 
         <ComoFunciona />
 
-        <button className="btn-agregar">← Agrega más producto</button>
+        <button
+          className="btn-agregar"
+          onClick={() => setLocation("/catalogo")}
+        >
+          ← Agrega más producto
+        </button>
 
         <button className="btn-whatsapp-mobile">
           <svg className="icono-ws" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#fff">
