@@ -1,4 +1,4 @@
-.seccion_det_p{
+.seccion_det_p {
     background-color: #F5F0E8;
     display: grid;
     grid-template-columns: 1fr;
@@ -7,42 +7,45 @@
     max-width: 100%;
 
 }
-.primer_seccion_dp{
+
+.primer_seccion_dp {
     display: flex;
     gap: 60px;
     justify-content: center;
     width: 90%;
     margin: auto;
 }
-.seccion_det_p h2{
+
+.seccion_det_p h2 {
     font-family: "Inria Serif", serif;
     font-style: italic;
     margin-top: 12px;
     margin-bottom: 10px;
 
 }
-.des_p{
+
+.des_p {
     font-family: "Inria Serif", serif;
     font-style: italic;
-} 
+}
 
-.seccion_det_p h6{
+.seccion_det_p h6 {
     color: #8B5E3C;
     letter-spacing: 2px;
     margin-bottom: 0px;
-    font-family: "DM Sans", sans-serif ;
+    font-family: "DM Sans", sans-serif;
 }
 
-.info_dp{
+.info_dp {
     margin-top: 40px;
     color: #0D0D0D;
     text-align: left;
 }
 
-.tarjeta_espc_dp{
+.tarjeta_espc_dp {
     background-color: #FFFFFF;
     width: 100%;
-    margin-top: 12px; 
+    margin-top: 12px;
     border-radius: 3px;
     font-family: "Inria Serif", serif;
     font-style: italic;
@@ -50,7 +53,8 @@
         0px 1px 3px 1px rgba(0, 0, 0, 0.15),
         0px 1px 2px 0px rgba(0, 0, 0, 0.30);
 }
-.tarjeta_espc_dp h3{
+
+.tarjeta_espc_dp h3 {
     margin-top: 0;
     letter-spacing: 2px;
     font-family: "DM Sans", sans-serif;
@@ -58,46 +62,54 @@
     margin-bottom: 10px;
 
 }
-.tarjeta_espc{
+
+.tarjeta_espc {
     padding: 20px;
 }
-.t_espc_dp{
+
+.t_espc_dp {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-.t_espc_dp .titu_prod{
+
+.t_espc_dp .titu_prod {
     font-size: clamp(13px, 1.5vw, 15px);
     font-weight: bold;
     margin-top: 6px;
     margin-bottom: 1px;
 }
 
-.imgs_dp{
+.imgs_dp {
     display: flex;
     margin-top: 80px;
 }
-.imagen_principal_dp{
+
+.imagen_principal_dp {
     width: 330px;
     height: 330px;
     margin-right: 50px;
     max-width: none;
 }
-.imgs_dp img{
+
+.imgs_dp img {
     cursor: pointer;
-    
+
 }
-.otros_img_dp{
+
+.otros_img_dp {
     display: flex;
     flex-direction: column;
     gap: 14px;
     margin-right: 30px;
-    
+
 }
-.otros_img_dp img{
+
+.otros_img_dp img {
     width: 85px;
     max-width: none;
 }
+
 .tarjeta_espc_dp .linea_dp {
     margin: auto;
     height: 1px;
@@ -105,6 +117,7 @@
     width: 100%;
     margin-top: 1px;
 }
+
 .espc_prod {
     font-size: 13px;
     font-size: clamp(11px, 1vw, 13px);
@@ -113,7 +126,7 @@
     margin-bottom: 1px;
 }
 
-.btn_añadir_carrito{
+.btn_añadir_carrito {
     cursor: pointer;
     display: flex;
     margin: auto;
@@ -131,16 +144,17 @@
     font-family: "DM Sans", sans-serif;
     letter-spacing: 1px;
 }
-.btn_añadir_carrito img{
+
+.btn_añadir_carrito img {
     width: 23px;
     margin-left: 10px;
     margin-right: 12px;
-  
+
 }
 
 
 
-.sep_dp{
+.sep_dp {
     margin: auto;
     margin-top: 30px;
     margin-bottom: 10px;
@@ -151,35 +165,40 @@
     justify-content: center;
 
 }
+
 .sep_dp .linea_dp {
     height: 2px;
     background-color: #000000;
     width: 100%;
 
 }
-.circulo_dp{
+
+.circulo_dp {
     margin-bottom: 8px;
     background-color: #F5F0E8;
     color: #000000;
     font-size: 30px;
 }
-.seccion_de_sugerencias{
+
+.seccion_de_sugerencias {
     display: flex;
     flex-direction: column;
     width: 90%;
     justify-content: center;
     margin: auto;
     margin-bottom: 25px;
-    
+
 }
-.titulo_s_s{
+
+.titulo_s_s {
     color: #0D0D0D;
     text-align: left;
     font-family: "Playfair Display SC", serif;
     letter-spacing: 1px;
     margin-bottom: 20px;
 }
-.tarjetas_s_s{
+
+.tarjetas_s_s {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -187,16 +206,16 @@
 }
 
 @media (max-width: 790px) {
-    .primer_seccion_dp{
+    .primer_seccion_dp {
         display: grid;
         gap: 20px;
         justify-content: center;
         width: 100%;
         margin: auto;
         margin-top: -50px;
-        
+
     }
-    
+
     .imgs_dp {
         display: flex;
         flex-direction: column-reverse;
@@ -224,17 +243,19 @@
         width: 25%;
         max-width: 80px;
     }
-    
-    .info_dp{
+
+    .info_dp {
         width: 90%;
         margin: auto;
         margin-top: 20px;
     }
-    .tarjetas_s_s{
+
+    .tarjetas_s_s {
         display: flex;
         margin: auto;
 
     }
+
     .t_espc_dp {
         display: grid;
         grid-template-columns: 90px 1fr;
@@ -246,18 +267,49 @@
         text-align: right;
         word-break: break-word;
     }
-    .sep_dp .linea_dp{
-        height:1.4px;
+
+    .sep_dp .linea_dp {
+        height: 1.4px;
     }
-    .sep_dp .circulo_dp{
+
+    .sep_dp .circulo_dp {
         font-weight: 100;
         font-size: 28px;
     }
-    .tarjeta-producto{
+
+    .tarjeta-producto {
         display: none;
     }
+
     /*  */
-    .tarjeta-producto:nth-of-type(1), .tarjeta-producto:nth-of-type(2) {
+    .tarjeta-producto:nth-of-type(1),
+    .tarjeta-producto:nth-of-type(2) {
         display: grid;
+    }
+}
+
+/* Agregar al final de src/pages/detalle-producto/detalle_producto.css */
+
+.tarjetas_s_s--4col {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+/* Achica un poco las tarjetas relacionadas sin tocar el diseño del catálogo */
+.tarjetas_s_s--4col .product-card-link {
+    zoom: 0.85;
+}
+
+/* Responsive: menos columnas en pantallas chicas */
+@media (max-width: 1024px) {
+    .tarjetas_s_s--4col {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .tarjetas_s_s--4col {
+        grid-template-columns: 1fr;
     }
 }
