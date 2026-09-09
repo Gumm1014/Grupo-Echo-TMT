@@ -2,6 +2,7 @@ import "./detalle_producto.css";
 import ProductCard from "../../components/catalogo/ProductCard.jsx";
 import { useEffect, useState } from "react";
 import { useParams } from "wouter";
+import { agregarAlCarrito } from "../../utils/carrito.js";
 
 function Detalle_producto() {
 
@@ -214,16 +215,12 @@ function Detalle_producto() {
 
           </div>
 
-
-          <button className="btn_añadir_carrito">
-
-            <img
-              src="/carrito_marron.png"
-              alt=""
-            />
-
+          <button
+            className="btn_añadir_carrito"
+            onClick={() => agregarAlCarrito(producto)}
+          >
+            <img src="/carrito_marron.png" alt="" />
             Añadir al carrito
-
           </button>
 
         </div>
