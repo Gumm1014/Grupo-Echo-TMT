@@ -1,4 +1,5 @@
 import "./carrito.css";
+import { useLocation } from "wouter";
 import Encabezado from "../../components/carrito/Encabezado";
 import ItemProducto from "../../components/carrito/ItemProducto";
 import ComoFunciona from "../../components/carrito/ComoFunciona";
@@ -10,6 +11,8 @@ const items = [
 ];
 
 export default function Carrito() {
+  const [, setLocation] = useLocation();
+
   return (
     <div className="pagina">
       <main className="contenido">
@@ -32,7 +35,10 @@ export default function Carrito() {
 
         <ComoFunciona />
 
-        <button className="btn-agregar">
+        <button
+          className="btn-agregar"
+          onClick={() => setLocation("/catalogo")}
+        >
           ← Agrega más producto
         </button>
 
