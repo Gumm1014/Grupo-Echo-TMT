@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "wouter";
 import "./carrito.css";
 import Encabezado from "../../components/carrito/Encabezado";
 import ItemProducto from "../../components/carrito/ItemProducto";
@@ -26,6 +27,7 @@ const carritoInicial = [
 
 export default function Carrito() {
   const [carrito, setCarrito] = useState(carritoInicial);
+  const [, setLocation] = useLocation();
 
   const eliminarProducto = (id) => {
     const nuevoCarrito = [];
@@ -118,4 +120,3 @@ export default function Carrito() {
     </div>
   );
 }
-
