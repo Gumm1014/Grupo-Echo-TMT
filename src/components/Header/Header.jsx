@@ -34,7 +34,7 @@ function Header() {
 
                 <nav>
                     <ul className="mobile-menu__list">
-                        <Link className="link_nav" href="/home">
+                        <Link className="link_nav" href="/">
                             <li className="mobile-menu__item">
                                 <img src="./casita.png" alt="" className="mobile-menu__icon" />
                                 <span>HOME</span>
