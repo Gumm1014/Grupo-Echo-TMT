@@ -1,99 +1,50 @@
+import { useState, useEffect } from "react";
+import { useParams, Link } from "wouter";
 import "./detalle_producto.css";
 import ProductCard from "../../components/catalogo/ProductCard.jsx";
-import { useEffect, useState } from "react";
-import { useParams } from "wouter";
 import { agregarAlCarrito } from "../../utils/carrito.js";
+import { useProductos } from "../../hooks/useProductos.js";
 
-function Detalle_producto() {
-
+function DetalleProducto() {
   const { id } = useParams();
-
-  const [producto, setProducto] = useState(null);
-  const [productos, setProductos] = useState([]);
+  const { productos, cargando, error } = useProductos();
   const [imagenPrincipal, setImagenPrincipal] = useState("");
 
+  const producto = productos.find((p) => p.id === id);
+
   useEffect(() => {
-    cargarProductos();
-  }, []);
-
-  async function cargarProductos() {
-
-    try {
-
-      const url = `https://sheets.googleapis.com/v4/spreadsheets/1551nSJ5je_HKrH2JXx9yEYNiN65tVQNYlknYs1rw2Pk/values/Productos?key=AIzaSyC7xqjgoGTJ8VBe9C-RXinpQcIbBJww1ow`;
-
-      const resp = await fetch(url);
-      const datos = await resp.json();
-
-      const filas = datos.values || [];
-      const filasProductos = filas.slice(1);
-
-      const listaProductos = filasProductos.map((fila) => ({
-        id: fila[0] || "",
-        nombre: fila[1] || "",
-        categoria: fila[2] || "",
-        descripcion: fila[3] || "",
-        materiales: fila[4] || "",
-        tiempoFabricacion: fila[5] || "",
-        ancho: fila[6] || "",
-        largo: fila[7] || "",
-        estilo: fila[8] || "",
-        medidas: fila[9] || "",
-        peso: fila[10] || "",
-        tapaTerminacion: fila[11] || "",
-        lustreColores: fila[12] || "",
-        imagen1: fila[13] || "",
-        imagen2: fila[14] || "",
-        imagen3: fila[15] || "",
-      }));
-
-      setProductos(listaProductos);
-
-      const productoEncontrado = listaProductos.find(
-        (p) => String(p.id) === String(id)
-      );
-
-      setProducto(productoEncontrado);
-
-      if (productoEncontrado) {
-        setImagenPrincipal(productoEncontrado.imagen1);
-      }
-
-    } catch (error) {
-
-      console.error("Error al cargar el producto:", error);
-
+    if (producto) {
+      setImagenPrincipal(producto.imagen1);
     }
+  }, [producto]);
+
+  if (cargando) {
+    return <p className="seccion_det_p">Cargando producto...</p>;
+  }
+
+  if (error) {
+    return <p className="seccion_det_p">No se pudo cargar el producto.</p>;
   }
 
   if (!producto) {
     return (
       <div className="seccion_det_p">
-        <p>Cargando producto...</p>
+        <p>No encontramos este producto.</p>
+        <Link href="/catalogo">Volver al catálogo</Link>
       </div>
     );
   }
 
-  const productosRelacionados = productos
-    .filter(
-      (p) =>
-        String(p.id) !== String(producto.id) &&
-        p.categoria.toLowerCase() === producto.categoria.toLowerCase()
-    )
-    .slice(0, 5);
+  const relacionados = productos
+    .filter((p) => p.id !== producto.id && p.categoria === producto.categoria)
+    .slice(0, 4);
 
   return (
-
     <div className="seccion_det_p">
-
-      {/* PRODUCTO */}
-
       <div className="primer_seccion_dp">
 
         <div className="imgs_dp">
-
           <div className="otros_img_dp">
-
             {producto.imagen1 && (
               <img
                 src={producto.imagen1}
@@ -101,7 +52,6 @@ function Detalle_producto() {
                 onClick={() => setImagenPrincipal(producto.imagen1)}
               />
             )}
-
             {producto.imagen2 && (
               <img
                 src={producto.imagen2}
@@ -109,7 +59,6 @@ function Detalle_producto() {
                 onClick={() => setImagenPrincipal(producto.imagen2)}
               />
             )}
-
             {producto.imagen3 && (
               <img
                 src={producto.imagen3}
@@ -117,102 +66,52 @@ function Detalle_producto() {
                 onClick={() => setImagenPrincipal(producto.imagen3)}
               />
             )}
-
           </div>
-
           <img
             className="imagen_principal_dp"
             src={imagenPrincipal}
             alt={producto.nombre}
           />
-
         </div>
 
-
         <div className="info_dp">
-
-          <h6>
-            FABRICACIÓN ARTESANAL · PRODUCTO SELECCIONADO
-          </h6>
-
-          <h2>
-            {producto.nombre}
-          </h2>
-
-          <p className="des_p">
-            {producto.descripcion}
-          </p>
-
+          <h6>FABRICACION ARTESANAL · PRODUCTO SELECCIONADO</h6>
+          <h2>{producto.nombre}</h2>
+          <p className="des_p">{producto.descripcion}</p>
 
           <div className="tarjeta_espc_dp">
-
             <div className="tarjeta_espc">
-
               <h3>Especificaciones</h3>
 
               <div className="t_espc_dp">
                 <p className="titu_prod">Estilo</p>
-                <p className="espc_prod">
-                  {producto.estilo || "No especificado"}
-                </p>
+                <p className="espc_prod">{producto.estilo || "No especificado"}</p>
               </div>
-
               <div className="linea_dp"></div>
 
               <div className="t_espc_dp">
                 <p className="titu_prod">Medidas</p>
-                <p className="espc_prod">
-                  {producto.medidas || "No especificado"}
-                </p>
+                <p className="espc_prod">{producto.medidas || "No especificado"}</p>
               </div>
-
               <div className="linea_dp"></div>
 
               <div className="t_espc_dp">
                 <p className="titu_prod">Peso</p>
-                <p className="espc_prod">
-                  {producto.peso || "No especificado"}
-                </p>
+                <p className="espc_prod">{producto.peso || "No especificado"}</p>
               </div>
-
               <div className="linea_dp"></div>
 
               <div className="t_espc_dp">
-                <p className="titu_prod">Ancho</p>
-                <p className="espc_prod">
-                  {producto.ancho || "No especificado"}
-                </p>
+                <p className="titu_prod">Tapa</p>
+                <p className="espc_prod">{producto["tapa/terminacion"] || "No especificado"}</p>
               </div>
-
               <div className="linea_dp"></div>
 
               <div className="t_espc_dp">
-                <p className="titu_prod">Largo</p>
-                <p className="espc_prod">
-                  {producto.largo || "No especificado"}
-                </p>
+                <p className="titu_prod">Lustre</p>
+                <p className="espc_prod">{producto["lustre/coloresdisponibles"] || "No especificado"}</p>
               </div>
-
-              <div className="linea_dp"></div>
-
-              <div className="t_espc_dp">
-                <p className="titu_prod">Tapa / Terminación</p>
-                <p className="espc_prod">
-                  {producto.tapaTerminacion || "No especificado"}
-                </p>
-              </div>
-
-              <div className="linea_dp"></div>
-
-              <div className="t_espc_dp">
-                <p className="titu_prod">Lustre / Colores</p>
-                <p className="espc_prod">
-                  {producto.lustreColores || "No especificado"}
-                </p>
-              </div>
-
             </div>
-
           </div>
 
           <button
@@ -222,54 +121,29 @@ function Detalle_producto() {
             <img src="/carrito_marron.png" alt="" />
             Añadir al carrito
           </button>
-
         </div>
-
       </div>
-
-
-      {/* SEPARADOR */}
 
       <div className="sep_dp">
-
         <div className="linea_dp"></div>
-
-        <div className="circulo_dp">
-          o
-        </div>
-
+        <div className="circulo_dp">o</div>
         <div className="linea_dp"></div>
-
       </div>
-
-
-      {/* RELACIONADOS */}
 
       <div className="seccion_de_sugerencias">
-
         <div className="titulo_s_s">
-          <h4>
-            Productos relacionados
-          </h4>
+          <h4>Productos relacionados</h4>
         </div>
-
-        <div className="tarjetas_s_s">
-
-          {productosRelacionados.map((productoRelacionado) => (
-
-            <ProductCard
-              key={productoRelacionado.id}
-              producto={productoRelacionado}
-            />
-
-          ))}
-
+        <div className="tarjetas_s_s tarjetas_s_s--4col">
+          {relacionados.length > 0 ? (
+            relacionados.map((p) => <ProductCard key={p.id} producto={p} />)
+          ) : (
+            <p>No hay productos relacionados por ahora.</p>
+          )}
         </div>
-
       </div>
-
     </div>
   );
 }
 
-export default Detalle_producto;
+export default DetalleProducto;
